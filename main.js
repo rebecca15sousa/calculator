@@ -72,6 +72,9 @@ function populateDisplay() {
 
 function clearDisplay() {
     display.textContent = "0";
+    firstValue = "";
+    secondValue = "";
+    operatorValue = "";
 }
 
 clearButton.addEventListener('click', function() {
