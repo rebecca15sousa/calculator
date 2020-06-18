@@ -1,8 +1,14 @@
 const display = document.querySelector('.display');
 const numButtons = document.querySelectorAll('.Nbtn');
 const clearButton = document.querySelector('.Cbtn');
+const operButtons = document.querySelectorAll('.Obtn');
+const equalsButton = document.querySelector('.Ebtn');
 let numContent;
 let displayContent;
+let previousKey;
+let firstValue;
+let secondValue;
+let operatorValue;
 
 function add(num1, num2) {
     return num1 + num2;
@@ -47,8 +53,9 @@ function operate(operator, num1, num2) {
 
 function populateDisplay() {
     displayContent = display.textContent;
-    if(displayContent === "0") {
+    if(displayContent === "0" || previousKey === "operator") {
         display.textContent = numContent;
+        previousKey = "";
     } else {
         display.textContent = displayContent.concat(numContent);
     }
@@ -66,5 +73,12 @@ numButtons.forEach(function(Nbtn) {
     Nbtn.addEventListener('click', function() {
         numContent = Nbtn.textContent;
         populateDisplay();
+    });
+});
+
+operButtons.forEach(function(Obtn) {
+    Obtn.addEventListener('click', function() {
+        operatorValue = Obtn.dataset.action;
+        previousKey = "operator";
     });
 });
