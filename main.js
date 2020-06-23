@@ -9,9 +9,10 @@ let numContent;
 let displayContent = "";
 let previousKey;
 let consecutiveOperators = false;
-let firstValue;
-let secondValue;
-let operatorValue;
+let consecutiveEquals = false;
+let firstValue = "";
+let secondValue = "";
+let operatorValue = "";
 
 function add(num1, num2) {
     return num1 + num2;
@@ -87,6 +88,9 @@ function clearDisplay() {
     firstValue = "";
     secondValue = "";
     operatorValue = "";
+    previousKey = "";
+    consecutiveOperators = false;
+    consecutiveEquals = false;
 }
 
 clearButton.addEventListener('click', function() {
@@ -94,12 +98,14 @@ clearButton.addEventListener('click', function() {
 });
 
 decButton.addEventListener('click', function() {
+    consecutiveEquals = false;
     addDecimal();
 });
 
 numButtons.forEach(function(Nbtn) {
     Nbtn.addEventListener('click', function() {
         numContent = Nbtn.textContent;
+        consecutiveEquals = false;
         addNumber();
     });
 });
@@ -118,14 +124,18 @@ operButtons.forEach(function(Obtn) {
         displayContent = display.textContent;
         firstValue = displayContent;
         previousKey = "operator";
+        consecutiveEquals = false;
     });
 });
 
 equalsButton.addEventListener('click', function() {
-    displayContent = display.textContent;
-    secondValue = displayContent;
-    let firstValueNum = Number(firstValue);
-    let secondValueNum = Number(secondValue);
-    operate(operatorValue, firstValueNum, secondValueNum);
-    consecutiveOperators = false;
+    if(consecutiveEquals == false) {
+        displayContent = display.textContent;
+        secondValue = displayContent;
+        let firstValueNum = Number(firstValue);
+        let secondValueNum = Number(secondValue);
+        operate(operatorValue, firstValueNum, secondValueNum);
+        consecutiveOperators = false;
+        consecutiveEquals = true;
+    }
 });
