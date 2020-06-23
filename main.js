@@ -48,12 +48,15 @@ function operate(operator, num1, num2) {
             console.log(res);
             break;
         case "Divide":
-            /*if(num2 == 0) {
-                display.textContent = "Very funny...Try another number";
-            }*/
-            res = divide(num1, num2).toFixed(2);
-            display.textContent = res;
-            console.log(res);
+            if(num2 == 0) {
+                res = "Very funny...Try another number";
+                display.textContent = res;
+                console.log(res);
+            } else {
+                res = divide(num1, num2).toFixed(2);
+                display.textContent = res;
+                console.log(res);
+            }
             break;
         default:
             return "ERROR"
