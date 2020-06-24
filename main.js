@@ -7,7 +7,7 @@ const decButton = document.querySelector('.Dbtn');
 let res;
 let numContent;
 let displayContent = "";
-let previousKey;
+let previousKey = "";
 let consecutiveOperators = false;
 let consecutiveEquals = false;
 let firstValue = "";
@@ -71,6 +71,9 @@ function addNumber() {
         display.textContent = numContent;
         previousKey = "";
         consecutiveOperators = true;
+    } else if (previousKey === "equals") {
+        display.textContent = numContent;
+        previousKey = "";
     } else {
         display.textContent = displayContent.concat(numContent);
     }
@@ -78,11 +81,15 @@ function addNumber() {
 
 function addDecimal() {
     displayContent = display.textContent;
-    if(!displayContent.includes(".")) {
-        display.textContent = displayContent + ".";
-    } else if(previousKey === "operator") {
+    if(previousKey === "operator") {
         display.textContent = "0.";
         previousKey = "";
+        consecutiveOperators = true;
+    } else if(previousKey === "equals") {
+        display.textContent = "0.";
+        previousKey = "";
+    } else if(!displayContent.includes(".")) {
+        display.textContent = displayContent + ".";
     }
 }
 
@@ -140,5 +147,6 @@ equalsButton.addEventListener('click', function() {
         operate(operatorValue, firstValueNum, secondValueNum);
         consecutiveOperators = false;
         consecutiveEquals = true;
+        previousKey = "equals";
     }
 });
