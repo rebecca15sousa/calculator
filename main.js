@@ -34,18 +34,18 @@ function divide(num1, num2) {
 function operate(operator, num1, num2) {
     switch(operator) {
         case "Add":
-            res = add(num1, num2).toFixed(2);
-            display.textContent = res;
+            res = add(num1, num2);
+            display.textContent = Math.round((res + Number.EPSILON) * 100) / 100;
             //console.log(res);
             break;
         case "Subtract":
-            res = subtract(num1, num2).toFixed(2);
-            display.textContent = res;
+            res = subtract(num1, num2);
+            display.textContent = Math.round((res + Number.EPSILON) * 100) / 100;
             //console.log(res);
             break;
         case "Multiply":
-            res = multiply(num1, num2).toFixed(2);
-            display.textContent = res;
+            res = multiply(num1, num2);
+            display.textContent = Math.round((res + Number.EPSILON) * 100) / 100;
             //console.log(res);
             break;
         case "Divide":
@@ -54,8 +54,8 @@ function operate(operator, num1, num2) {
                 display.textContent = res;
                 //console.log(res);
             } else {
-                res = divide(num1, num2).toFixed(2);
-                display.textContent = res;
+                res = divide(num1, num2);
+                display.textContent = Math.round((res + Number.EPSILON) * 100) / 100;
                 //console.log(res);
             }
             break;
