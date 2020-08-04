@@ -1,4 +1,104 @@
+.calculatorContainer {
+    margin: auto;
+    width: 30%;
+    height: 100%;
+    background-color: Gainsboro;
+    padding: 20px;
+    border-radius: 25px;
+}
+
 .display {
-    /*text-align: right;*/
-    font-size: 50px;
+    text-align: right;
+    font-size: 75px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    background-color: HoneyDew;
+    border-radius: 15px;
+}
+
+.calculatorButtons {
+    width: 98%;
+    height: 400px;
+    padding: 3% 1% 0;
+}
+
+.numpad {
+    display: inline-grid;
+    /*grid-template-columns: repeat(3, 25%);
+    grid-template-rows: repeat(5, 20%);*/
+    /*column-gap: 5px;
+    row-gap: 5px;*/
+    gap: 5px;
+    width: 75%;
+    height: 100%;
+}
+
+.Nbtn {
+    background-color: royalblue;
+    color: floralwhite;
+    border-radius: 50%;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.Dbtn {
+    background-color: royalblue;
+    color: floralwhite;
+    border-radius: 50%;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.Bbtn {
+    background-color: royalblue;
+    color: floralwhite;
+    border-radius: 50%;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.Cbtn {
+    grid-column: 1 / 4;
+    border-radius: 25%;
+    border: none;
+    background-color: dimgray;
+    color: floralwhite;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.operations {
+    display: inline-grid;
+    /*grid-template-columns: repeat(1);
+    grid-template-rows: repeat(5);*/
+    row-gap: 5px;
+    width: 24%;
+    height: 100%;
+}
+
+.Obtn {
+    background-color: firebrick;
+    color: floralwhite;
+    border-radius: 15%;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.Ebtn {
+    background-color: firebrick;
+    color: floralwhite;
+    border-radius: 15%;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    font-weight: bold;
 }
