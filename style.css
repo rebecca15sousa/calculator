@@ -41,6 +41,12 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: 30px;
     font-weight: bold;
+    transition-duration: 0.2s;
+}
+
+.Nbtn:hover {
+    background-color: darkgray;
+    color: royalblue;
 }
 
 .Dbtn {
@@ -51,6 +57,12 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: 30px;
     font-weight: bold;
+    transition-duration: 0.2s;
+}
+
+.Dbtn:hover {
+    background-color: darkgray;
+    color: royalblue;
 }
 
 .Bbtn {
@@ -61,6 +73,12 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: 30px;
     font-weight: bold;
+    transition-duration: 0.2s;
+}
+
+.Bbtn:hover {
+    background-color: darkgray;
+    color: royalblue;
 }
 
 .Cbtn {
@@ -72,6 +90,12 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: 25px;
     font-weight: bold;
+    transition-duration: 0.2s;
+}
+
+.Cbtn:hover {
+    background-color: floralwhite;
+    color: dimgray;
 }
 
 .operations {
@@ -91,6 +115,12 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: 30px;
     font-weight: bold;
+    transition-duration: 0.2s;
+}
+
+.Obtn:hover {
+    background-color: darkgray;
+    color: firebrick;
 }
 
 .Ebtn {
@@ -101,4 +131,10 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: 30px;
     font-weight: bold;
+    transition-duration: 0.2s;
+}
+
+.Ebtn:hover {
+    background-color: darkgray;
+    color: firebrick;
 }
